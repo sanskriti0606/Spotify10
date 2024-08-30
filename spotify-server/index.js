@@ -54,7 +54,10 @@ mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTop
 
 // Middleware
 app.use(cors());
-app.use(bodyParser.json()); // Parse JSON request bodies
+app.use(bodyParser.json()); 
+app.get('/', (req, res) => {
+    res.send('Hello World');
+});
 
 // Define routes
 app.use('/api/users', userRoutes);
